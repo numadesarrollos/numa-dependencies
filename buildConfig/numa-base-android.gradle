@@ -66,15 +66,15 @@ android {
 }
 
 dependencies {
-    implementation okKotlin.values()
+    implementation numaKotlin.values()
 
-    implementation okAndroid.androidxCore
-    implementation okAndroid.appcompat
-    implementation okAndroid.annotation
+    implementation numaAndroid.androidxCore
+    implementation numaAndroid.appcompat
+    implementation numaAndroid.annotation
 
-    testImplementation okTest.values()
-    testImplementation okTestAndroid.values()
-    testRuntimeOnly okTestRuntime.values()
+    testImplementation numaTest.values()
+    testImplementation numaTestAndroid.values()
+    testRuntimeOnly numaTestRuntime.values()
 }
 
 tasks.withType(Test) {

@@ -1,0 +1,15 @@
+apply from: "${project.rootDir}/gradleConfig/buildConfig/numa-library-android.gradle"
+
+android {
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation numaLibs.koin
+    implementation numaLibs.philology
+    implementation numaLibs.viewpump
+}
+

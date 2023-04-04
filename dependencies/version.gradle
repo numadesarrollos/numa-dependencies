@@ -1,20 +1,162 @@
 ext {
     kotlinVersion = '1.8.0'
     gradleTools = '7.4.1'
-    lintVersion = '27.2.0'
+    lintVersion = '27.2.0' //It must be gradleTools + 23
     gradleIdeaExt = '0.10'
     gradleDownloadVersion = '4.1.1'
     nodeVersion = '1.3.1'
     buildTools = '32.0.0'
-    navVersion = '2.5.3'
+    navVersion = '2.5.3' //Use it in plugin and nav libraries
     googleservicesVersion = '4.3.3'
     sonarqubeVersion = '3.1.1'
     jacocoVersion = '0.8.8'
     jacocoAndroidVersion = '0.2'
     detektVersion = '1.5.1'
+    // TODO: Remove this variable when migration to Detekt 1.22.0 ends and update detektVersion value.
     detektVersion2 = '1.22.0'
     appdynamicsVersion = '22.2.2'
     dynatraceVersion = '8.255.1.1005'
     pluginJunit5Version = '1.8.2.1'
     grgitVersion = '5.0.0'
+
+    sdkCompile = 33
+    sdkMin = 21
+    sdkTarget = 33
+
+    kotlinCoroutinesVersion = '1.6.4'
+    androidXCoreVersion = '1.8.0'
+    appcompatVersion = '1.5.1'
+    constraintLayoutVersion = '2.0.4'
+    recyclerViewVersion = '1.1.0'
+    androidxSwiperefreshlayoutVersion = '1.1.0'
+    annotationVersion = '1.3.0'
+    materialVersion = '1.4.0'
+    okhttpVersion = '4.9.0'
+    retrofitVersion = '2.9.0'
+    moshiVersion = '1.14.0'
+    gsonVersion = '2.10'
+    mpandroidChartVersion = 'v3.1.0'
+    firebaseIidVersion = '21.1.0'
+    glideVersion = '4.12.0'
+    lottieVersion = '5.2.0'
+    mpandroidChartVersion = 'v3.1.0'
+    biometricVersion = '1.1.0'
+    koinVersion = '3.3.2'
+    koinComposeVersion = '3.4.1'
+    philologyVersion = '2.1.0'
+    viewpumpVersion = '2.0.3'
+    mapKtsVersion = '1.7.0'
+    mapUtilsVersion = '2.0.3'
+    mapPlayServiceVersion = '17.0.0'
+    junitVersion = '4.13.2'
+    junit5Version = '5.8.2'
+    mockitoVersion = '3.8.0'
+    mockitoJupiterVersion = '3.8.0'
+    mockitoKotlinVersion = '2.2.0'
+    androidXTestVersion = '1.3.0'
+    mockkVersion = '1.10.0'
+    jsonVersion = '20200518'
+    powermockVersion = '2.0.7'
+    robolectricVersion = '1.4.0'
+    testRunnerVersion = '1.2.0'
+    espressoVersion = '3.2.0'
+    rulesVersion = '1.2.0'
+    junitKtxVersion = '1.1.3'
+    okhttp3IdlingVersion = '1.0.0'
+    flexboxVersion = '2.0.1'
+    fragmentxVersion = '1.5.5'
+    playServicesAuthVersion = '19.2.0'
+    playServicesAuthApiVersion = '17.5.1'
+    composeBomVersion = '2023.01.00'
+    composeCompilerVersion = '1.4.1'
+    composeMultiplatform = '1.3.1'
+    activityComposeVersion = '1.6.1'
+    lifecycleViewmodelComposeVersion = '2.5.1'
+    coilVersion = '2.2.2'
+    accompanistVersion = '0.28.0'
+    roomVersion = "2.5.0"
+    dataStoreVersion = "1.0.0"
+
+    composeRulesGeneric = '0.1.2'
+    composeRulesAppKode = '1.2.2'
+
+    numaKotlin = [
+            stdlib                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion",
+            coroutinesPlayServices: "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinCoroutinesVersion",
+            reflect               : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    ]
+
+    numaLibs = [
+            firebaseIid                         : "com.google.firebase:firebase-iid:$firebaseIidVersion",
+            biometric                           : "androidx.biometric:biometric:$biometricVersion",
+            koin                                : "io.insert-koin:koin-android:$koinVersion",
+            koinCompose                         : "io.insert-koin:koin-androidx-compose:$koinComposeVersion",
+            philology                           : "com.jcminarro:Philology:$philologyVersion",
+            viewpump                            : "io.github.inflationx:viewpump:$viewpumpVersion",
+            gson                                : "com.google.code.gson:gson:$gsonVersion",
+            glide                               : "com.github.bumptech.glide:glide:$glideVersion",
+            glideAnnotation                     : "com.github.bumptech.glide:compiler:$glideVersion",
+            mpandroidChart                      : "com.github.PhilJay:MPAndroidChart:$mpandroidChartVersion",
+            lottie                              : "com.airbnb.android:lottie:$lottieVersion",
+            lottieCompose                       : "com.airbnb.android:lottie-compose:$lottieVersion",
+            coilCompose                         : "io.coil-kt:coil-compose:$coilVersion",
+            accompanistSystemUiController       : "com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion",
+            accompanistFlowlayout				: "com.google.accompanist:accompanist-flowlayout:$accompanistVersion",
+            flexbox                             : "com.google.android:flexbox:$flexboxVersion"
+    ]
+
+    numaTest = [
+            coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutinesVersion",
+            jupiter       : "org.junit.jupiter:junit-jupiter-api:$junit5Version",
+            jupiterparams : "org.junit.jupiter:junit-jupiter-params:$junit5Version",
+            junit         : "junit:junit:$junitVersion",
+            mockito       : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoJupiter: "org.mockito:mockito-junit-jupiter:$mockitoJupiterVersion",
+            mockitoInline : "org.mockito:mockito-inline:$mockitoVersion",
+            mockitoKotlin : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            mockk         : "io.mockk:mockk:$mockkVersion",
+            json          : "org.json:json:$jsonVersion",
+            koinTest      : "io.insert-koin:koin-test:$koinVersion",
+            koinTestJu4   : "io.insert-koin:koin-test-junit4:$koinVersion",
+            koinTestJu5   : "io.insert-koin:koin-test-junit5:$koinVersion"
+    ]
+    numaTestRuntime = [
+            jupiter     : "org.junit.jupiter:junit-jupiter-engine:$junit5Version",
+            junitVintage: "org.junit.vintage:junit-vintage-engine:$junit5Version"
+    ]
+
+    numaAndroid = [
+            androidxCore      : "androidx.core:core-ktx:$androidXCoreVersion",
+            appcompat         : "androidx.appcompat:appcompat:$appcompatVersion",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            navigationUi      : "androidx.navigation:navigation-ui-ktx:$navVersion",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationDynamic : "androidx.navigation:navigation-dynamic-features-fragment:$navVersion",
+            annotation        : "androidx.annotation:annotation:$annotationVersion",
+            recyclerView      : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            swipe             : "androidx.swiperefreshlayout:swiperefreshlayout:$androidxSwiperefreshlayoutVersion",
+            material          : "com.google.android.material:material:$materialVersion",
+            googleMapKts      : "com.google.maps.android:maps-utils-ktx:$mapKtsVersion",
+            googleMapUtils    : "com.google.maps.android:android-maps-utils:$mapUtilsVersion",
+            mapPlayService    : "com.google.android.gms:play-services-maps:$mapPlayServiceVersion",
+            mapLocationService: "com.google.android.gms:play-services-location:$mapPlayServiceVersion",
+            fragmentx         : "androidx.fragment:fragment-ktx:$fragmentxVersion"
+    ]
+
+    numaTestAndroid = [
+            archCoreTesting: "android.arch.core:core-testing:$androidXCoreVersion",
+            robolectric    : "androidx.test:core:$robolectricVersion",
+            testRunner     : "androidx.test:runner:$testRunnerVersion",
+            espresso       : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            rules          : "androidx.test:rules:$rulesVersion",
+            extJunit       : "androidx.test.ext:junit-ktx:$junitKtxVersion",
+            mockWebServer  : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+            okhttpIdling   : "com.jakewharton.espresso:okhttp3-idling-resource:$okhttp3IdlingVersion",
+    ]
+
+    numaLint = [
+            lintApi   : "com.android.tools.lint:lint-api:$lintVersion",
+            lintChecks: "com.android.tools.lint:lint-checks:$lintVersion"
+    ]
 }
