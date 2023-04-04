@@ -1,0 +1,35 @@
+import groovy.transform.Canonical
+
+@Canonical
+class FileToDownload {
+    String source = ""
+    String destFile = ""
+    Boolean isOverride = true
+}
+
+def downloadFile(String source, String destFile, Boolean isOverride) {
+    println("Downloading $destFile...")
+    download {
+        src source
+        dest destFile
+        overwrite isOverride
+    }
+    return destFile
+}
+
+ext.createFileToDowload = { source, destFile, isOverride ->
+    return new FileToDownload(source, destFile, isOverride)
+}
+
+ext.concatenate = { filesToConcatenate, outputFilePath ->
+    println("Concat in $outputFilePath...")
+    def output = new File(outputFilePath)
+    output.write('')
+    filesToConcatenate.each { f -> output << f.text }
+}
+
+ext.downloadFileList = { filesToDownload ->
+    filesToDownload.each { file ->
+        downloadFile(file.source, file.destFile, file.isOverride)
+    }
+}

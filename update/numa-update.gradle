@@ -1,0 +1,17 @@
+apply from: "${project.rootDir}/gradleConfig/update/update.gradle"
+
+ext.filesGitIgnore = { isOverride ->
+    [
+            createFileToDowload(
+                    getSourceUrl("buildConfig/gitignore/'numa-gitignore.txt"),
+                    "${gradleConfigPath}/gitignore/ok-gitignore.txt",
+                    isOverride
+            )
+    ]
+}
+
+ext.downloadNumaGradleUpdatedFiles = { isOverride ->
+    downloadFileList(okFilesToDownload(isOverride))
+    concatDependenciesFile(isOverride)
+    concatGitIgnoreFile(isOverride)
+}
